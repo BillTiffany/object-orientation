@@ -5,7 +5,11 @@
 */
 
 //Code here
-
+const person ={
+  firstName: "Bill",
+  lastName: "Tiffany",
+  age: 39,
+}
 
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -17,6 +21,13 @@
 
 //Code here
 
+const dog ={
+  name: "Chewie",
+  color: "white",
+  age: "10",
+  goodBoy: true
+
+}
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
@@ -24,6 +35,7 @@
 
 //Code here
 
+console.log(dog.name);
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
@@ -31,6 +43,7 @@
 
 //Code here
 
+console.log(dog['color']);
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -41,6 +54,14 @@
 
 //Code here
 
+const favoriteThings = {
+  band: "Tool",
+  food: "All",
+  person: "Liz",
+  book: "Zealot",
+  movie:"Dark City",
+  holiday:"Christmas",
+}
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
@@ -48,6 +69,8 @@
 
 //Code here
 
+favoriteThings.car = "Aston Martin"
+favoriteThings.show= "Rick and Morty"
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -55,8 +78,9 @@
 */
 
 //Code here
-
-
+favoriteThings.food="Chicken Nuggets"
+favoriteThings.book="Harry Potter"
+console.log(favoriteThings)
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
 // Do not edit the code below.
@@ -74,6 +98,8 @@ var carDetails = {
 
 //Code Here
 
+const{color,make,model,year}=carDetails
+console.log(carDetails)
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -83,16 +109,20 @@ var carDetails = {
   Use object destructuring to save the object properties to new variables. 
   The property names are firstName, lastName, and title.
 */
-
+const newGuy ={
+  firstName: "Jacob",
+  lastName: "priest",
+  title: "Supervisor"
+}
 function greeting( obj ) {
   //Code Here
-  
+  const{firstName, lastName, title}=obj;
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
 
-
+console.log(greeting(newGuy))
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -105,7 +135,26 @@ function greeting( obj ) {
 */
 
 //Code Here
+const propertyValues ={
+  utah: 28,
+  california: 100,
+  texas: 35,
+  arizona: 23,
+}
 
+function totalPopulation(obj){
+  const{utah,california,texas,arizona}=obj;
+  let sum = 0;
+for(let key in obj){
+  sum += obj[key];
+}
+return sum
+}
+console.log(propertyValues)
+console.log(totalPopulation(propertyValues));
+
+const{utah,california,texas,arizona}=propertyValues
+console.log(utah)
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
@@ -119,7 +168,20 @@ function greeting( obj ) {
 */
 
 //Code Here
+const ingredientList ={
+  carb: "10 grams",
+  fat: "25 gram",
+  protein: "30 grams",
+}
 
+function ingredients(obj){
+  let newArray=[]
+  const{carb,fat,protein}=obj;
+  for(let key in obj){
+    newArray.push(obj[key]);
+}return newArray;
+}
+console.log(ingredients(ingredientList))
 
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
@@ -141,7 +203,9 @@ var user = {
 */
 
 //Code Here
-
+user.name= "Bryan G. Smith";
+user.email="bryan.smith@devmounta.in"
+console.log(user)
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -149,7 +213,8 @@ var user = {
 */
 
 //Code Here
-
+delete user.age;
+console.log(user);
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -160,7 +225,15 @@ var user = {
 
 //Code here
 
-
+class Cat {
+  constructor(name,age,color){
+  this.name = name;
+  this.age = age;
+  this.color = color;
+}
+}
+let Rango=new Cat("Rango","6","tabby");
+console.log(Rango)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -171,6 +244,20 @@ var user = {
 */
 
 //Code here
+
+class Wizard {
+  constructor(name, age, favoriteSpell){
+    this.name=name;
+    this.age=age;
+    this.favoriteSpell=favoriteSpell;
+  }
+  cast(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+}
+}
+let hermione=new Wizard("Hermione", 15 , "Expelliarmus")
+hermione.cast()
+console.log(hermione)
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -196,8 +283,25 @@ var user = {
 */
 
 //Code Here
+class Phone{
+  constructor(brand,model,storage,color,price,soldProperties){
+  this.brand= brand;
+  this.model= model;
+  this.storage= storage;
+  this.color= color;
+  this.price= price;
+  this.soldProperties= false;
+}
+sell(){
+  this.soldProperties = !this.soldProperties
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+  changePrice(newPrice){
+    this.price=newPrice;
+  }
+}
+let Android = new Phone("Android", "Razr", "1TB", "Black", 750)
 
-  
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -209,6 +313,9 @@ var user = {
 */
 
 //Code Here
+let Razr = new Phone("Droid", "Razr", 1000 , "Black", 750)
+let Droid = new Phone("Droid", "Razr", 2000, "Red", 1250)
+let iPhone = new Phone("iPhone", "13", 512, "Silver", 2500)
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -218,7 +325,8 @@ var user = {
 */ 
 
 //Code Here 
-
+Droid.changePrice(2000);
+console.log(Droid)
 
 /*
   Now call the sell method on one of your other phone objects
@@ -227,14 +335,16 @@ var user = {
 */
 
 //Code Here 
-
+iPhone.sell();
+console.log(iPhone);
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
 /*
   Use the spread operator to create a copy of the colors object below.
   Store the copy in a variable called colorsCopy.
-  Note: We did not cover the spread operator in class. We do not expect you to know how to use it. Challenge yourself by going online and researching what the spread operator is and how to use it.
+  Note: We did not cover the spread operator in class. We do not expect you to know how to use it. 
+  Challenge yourself by going online and researching what the spread operator is and how to use it.
 */
 
 //do not edit this object
@@ -246,7 +356,8 @@ const colors = {
 //do not edit this object
 
 //Code Here 
-
+const colorsCopy= {...colors}
+console.log(colorsCopy)
 
 
 /*
@@ -274,7 +385,8 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
-
+const helensInfo={...contactInfo, ...shippingInfo}
+console.log(helensInfo)
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -292,6 +404,18 @@ const shippingInfo = {
 */
 
 //Code Here 
+class Vehicle{
+  constructor(capacity,color,mileage){
+  this.capacity=capacity;
+  this.color= color;
+  this.mileage= mileage;
+  }
+  move(miles){
+    this.mileage += miles;
+    console.log(this.mileage);
+  }
+}
+
 
 
 /*
@@ -299,7 +423,8 @@ const shippingInfo = {
 */
 
 //Code Here
-
+let prius= new Vehicle(5, "white", 180000)
+console.log(prius)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -311,17 +436,25 @@ const shippingInfo = {
 */
 
 //Code Here
+class Motorcycle extends Vehicle {
+constructor(capacity,color,mileage,make,isCool){
+  super(capacity,color,mileage);
+  this.make=make;
+  this.isCool=true;
+}
+}
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here 
-
+let Honda = new Motorcycle(2,"black", 50000, "shadow",)
+console.log(Honda)
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+Honda.move(25000)
 /*
   Let's make another class based off of Vehicle. 
 
@@ -338,7 +471,26 @@ const shippingInfo = {
 */
 
 //Code Here
-
+class Boat extends Vehicle {
+  constructor(capacity,color,mileage,name,type,isSeaworthy){
+    super(capacity,color,mileage);
+    this.name=name;
+    this.type=type;
+    this.isSeaworthy=false;
+  }
+  checkSeaworthiness(){
+    if(this.isSeaworthy === true){
+    console.log(`${this.color} ${this.type} is seaworthy!`)
+  }else{
+    console.log(`you need to get your ${this.type} in shape`)
+  }
+}
+performMaintenance(){
+  this.isSeaworthy=true;{
+    console.log("Maintenance has been performed, you ship should be seaworthy now.")
+  }
+}
+}
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
@@ -346,21 +498,23 @@ const shippingInfo = {
 */
 
 //Code Here
+let Boaty = new Boat(100,"red", 100, "boatyMcboatface", "Yacht", false )
 
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
-
+Boaty.checkSeaworthiness();
 /*
   Now run the performMaintenance method on your boat
 */
 
 //Code Here 
+Boaty.performMaintenance();
 
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
-
+Boaty.checkSeaworthiness();
 //Code Here
