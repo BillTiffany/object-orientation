@@ -480,14 +480,14 @@ class Boat extends Vehicle {
   }
   checkSeaworthiness(){
     if(this.isSeaworthy === true){
-    console.log(`${this.color} ${this.type} is seaworthy!`)
+    console.log(`${this.color} ${this.type} ${this.name} is seaworthy!`)
   }else{
     console.log(`you need to get your ${this.type} in shape`)
   }
 }
 performMaintenance(){
   this.isSeaworthy=true;{
-    console.log("Maintenance has been performed, you ship should be seaworthy now.")
+    console.log("Maintenance has been performed, your ship should be seaworthy now.")
   }
 }
 }
@@ -498,7 +498,7 @@ performMaintenance(){
 */
 
 //Code Here
-let Boaty = new Boat(100,"red", 100, "boatyMcboatface", "Yacht", false )
+let Boaty = new Boat(100,"red", 100, "boaty Mcboatface", "Yacht", false )
 
 /*
   Call the checkSeaworthiness method on your new boat
